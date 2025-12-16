@@ -9,7 +9,7 @@ tasks = []
 def view_tasks():
     if flask.request.method == "POST":
         task = flask.request.form.get("task_name")
-        tasks.remove(task)
+        tasks.remove(task.strip())
     return flask.render_template("view_tasks.html", tasks=tasks)
 
 
